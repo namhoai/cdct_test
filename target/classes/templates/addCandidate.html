@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8"/>
+		<title>fom-01</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"/>
+		<!-- <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css"> -->
+		
+		
+		<!-- Icons font CSS-->
+		<link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all"/>
+		<link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all"/>
+		<!-- Font special for pages-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+
+		<!-- Vendor CSS-->
+		<link href="vendor/select2/select2.min.css" rel="stylesheet" media="all"/>
+		<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all"/>
+		<!-- STYLE CSS -->
+		<!-- <link href="css/main.css" rel="stylesheet" media="all"> -->
+		<link rel="stylesheet" href="css/style.css"/>
+		<link href="css/main.css" rel="stylesheet" media="all"/>
+	</head>
+
+	<body>
+        <!-- <div class="header">
+            <div class="logo">
+                <a href=""><img src="./images/logo.png" alt=""></a> 
+            </div>
+            <div class="header-img">
+                <img src="./images/header-img.png" alt="">
+            </div>
+        </div> -->
+		<div class="wrapper">
+            <!-- <div class="backround-img" /> -->
+			<div class="inner">
+				<form th:action="@{/addCandidate}" th:object ="${candidate}" method="post">
+					<p>Thông tin cá nhân</p>
+					
+					<div class="form-wrapper">
+							<label for="">Họ tên</label>
+							<input type="text" class="form-control" th:field="*{fullName}"/>
+					</div>
+					<div class="form-wrapper">
+							<label for="">Ngành sinh</label>
+							<input class="form-control js-datepicker" type="text" th:field="*{dateOfBirth}"/>
+                            <i class="zmdi zmdi-calendar-note input	-icon js-btn-calendar"></i>
+					</div>
+					<div class="form-wrapper">
+							<label for="">Địa chỉ đang ở(Ghi rõ)</label>
+							<input type="text" class="form-control" th:field="*{address}"/>
+					</div>
+					<div class="form-group">
+							<div class="form-wrapper">
+								<label for="">Email</label>
+								<input type="email" class="form-control" th:field="*{email}" />
+							</div>
+							<div class="form-wrapper">
+								<label for="">Số điện thoại</label>
+								<input type="text" class="form-control" th:field="*{phoneNumber}"/>
+							</div>
+						</div>
+
+					<p style="color :red">*Yêu cầu các thí sinh ghi rõ các thông tin</p>
+
+					    <!-- form 02-->
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <label for="">Khoa</label>
+                                <select class="list-select" th:field="*{facultyName}">
+                                    <option th:value="''"> No Select </option>
+                                   	<option th:each="faculty:${faculties}" th:value="${faculty.name}" th:text="${faculty.name}" value=""/>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <label for="">Nước</label>
+                                <select class="list-select" th:field="*{countryName}" id ="countryName" onchange= "sendCountryName()">
+                                    <option th:value="''"> No Select </option>
+                                   	<option th:each="country:${countries}" th:value="${country.name}" th:text="${country.name}" value=""/>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        
+                         <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <label for="">Khối ngành</label>
+                                <select class="list-select" th:field="*{majorName}">
+                                    <option th:value="''"> No Select </option>
+                                   	<option th:each="major:${majors}" th:value="${major.nameMajor}" th:text="${major.nameMajor}" value=""/>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="form-wrapper">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <label for="">Khối Thi</label>
+                                        <select th:field="*{grade}">
+                                            <option th:value="'A'" th:text="A"></option>
+                                            <option th:value="'B'" th:text="B"></option>
+                                            <option th:value="'C'" th:text="C"></option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-wrapper">
+                                <div class="input-group">
+                                    <input class="input--style-3" type="number" th:field = "*{totalScore}"/>
+                                </div>
+							</div>
+							<div>
+								<input type="submit" value = "Submit"/>
+							</div>
+                        </div>
+				</form>
+			</div>
+		</div>
+		   <!-- Jquery JS-->
+		   <script src="vendor/jquery/jquery.min.js"></script>
+		<!-- Vendor JS-->
+		<script src="vendor/select2/select2.min.js"></script>
+		<script src="vendor/datepicker/moment.min.js"></script>
+		<script src="vendor/datepicker/daterangepicker.js"></script>
+		 <!-- Main JS-->
+		 <script src="js/global.js"></script>
+		 <script type="text/javascript">
+		 	var countryName = $("#countryName").val();
+		 	function sendCountryName() {
+		 		$.ajax({
+					type : "GET",
+					url : "${home}home/index/",
+					data : {
+						countryName : countryName,
+					},
+					timeout : 100000,
+					success : function(data) {
+						$("body").html(result);
+					},
+					error : function(e) {
+						console.log("ERROR: ", e);
+					}
+				});
+		 	}
+		 </script>
+	</body>
+</html>

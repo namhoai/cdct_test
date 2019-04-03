@@ -1,0 +1,198 @@
+#exampleSlider {
+  position: relative;
+}
+@media (max-width: 767px) {
+  #exampleSlider {
+    border-color: transparent;
+  }
+}
+#exampleSlider .MS-content {
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-content {
+    margin: 0;
+  }
+}
+
+#exampleSlider .MS-content .item {
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+  border-right: none;
+  width: 25%;
+  text-align: center;
+}
+
+#exampleSlider .MS-content .item iframe {
+  border: unset;
+}
+
+
+@media (max-width: 1200px) {
+  #exampleSlider .MS-content .item {
+    width: 33.3333%;
+  }
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-content .item {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-content .item {
+    width: 100%;
+  }
+}
+#exampleSlider .MS-content .item p {
+  font-size: 30px;
+  text-align: center;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px 0;
+}
+#exampleSlider .MS-controls button {
+  position: absolute;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  outline: 0;
+  top: 55px;
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-controls button {
+    display: none;
+  }
+}
+#exampleSlider .MS-controls button:hover {
+  cursor: pointer;
+}
+#exampleSlider .MS-controls .MS-left {
+  left: -55px;
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-controls .MS-left {
+    left: -2px;
+  }
+}
+#exampleSlider .MS-controls .MS-right {
+  right: -55px;
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-controls .MS-right {
+    right: -2px;
+  }
+}
+
+
+
+/* student */
+
+#exampleSlider-student {
+  position: relative;
+  padding: 0px 50px;
+}
+
+#exampleSlider-student .MS-content {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#exampleSlider-student .MS-content span {
+  overflow: hidden;
+  white-space: normal;
+}
+
+@media (max-width: 767px) {
+  #exampleSlider-student {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 767px) {
+  #exampleSlider-student .MS-content {
+    margin: 0;
+  }
+}
+
+#exampleSlider-student .MS-content .item {
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+  border-right: none;
+  width: 25%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#exampleSlider-student .MS-content .item iframe {
+  border: unset;
+}
+
+@media (max-width: 1200px) {
+  #exampleSlider-student .MS-content .item {
+    width: 25%;
+  }
+}
+@media (max-width: 992px) {
+  #exampleSlider-student .MS-content .item {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  #exampleSlider-student .MS-content .item {
+    width: 100%;
+  }
+}
+#exampleSlider-student .MS-content .item p {
+  font-size: 30px;
+  text-align: center;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px 0;
+}
+#exampleSlider-student .MS-controls button {
+  position: absolute;
+  background: transparent;
+  font-size: 15px;
+  outline: 0;
+  top: 120px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  width: 50px;
+  color: #fff;
+  height: 50px;
+}
+@media (max-width: 767px) {
+  #exampleSlider-student .MS-controls button {
+    display: none;
+  }
+}
+#exampleSlider-student .MS-controls button:hover {
+  cursor: pointer;
+}
+#exampleSlider-student .MS-controls .MS-left {
+  left: -20px;
+}
+@media (max-width: 992px) {
+  #exampleSlider-student .MS-controls {
+    display: none;
+  }
+}
+#exampleSlider-student .MS-controls .MS-right {
+  right: -20px;
+}
+@media (max-width: 992px) {
+  #exampleSlider-student .MS-controls {
+    display: none;
+  }
+}

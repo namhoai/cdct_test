@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="candidate-student-report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dd5ae154-06ef-4648-b5f3-675b35e6cd4f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="title" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dateCreated" class="java.util.Date">
+		<fieldDescription><![CDATA[dateCreated]]></fieldDescription>
+	</field>
+	<field name="fullName" class="java.lang.String">
+		<fieldDescription><![CDATA[fullName]]></fieldDescription>
+	</field>
+	<field name="phoneNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[phoneNumber]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="faculty.name" class="java.lang.String">
+		<fieldDescription><![CDATA[faculty.name]]></fieldDescription>
+	</field>
+	<field name="dateOfBirth" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfBirth]]></fieldDescription>
+	</field>
+	<field name="totalScore" class="java.lang.Float">
+		<fieldDescription><![CDATA[totalScore]]></fieldDescription>
+	</field>
+	<field name="grade" class="java.lang.String">
+		<fieldDescription><![CDATA[grade]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="65" width="575" height="30" uuid="031bb47b-3b86-4e72-9019-f01a4d336ffe"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="16"/>
+				</textElement>
+				<text><![CDATA[Danh sách Ứng Viên đăng kí chính quy]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="67" width="80" height="30" uuid="94e12f94-8632-45b3-9294-0eec544a3f10"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+				</textElement>
+				<text><![CDATA[Ngày đăng kí]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="67" width="90" height="30" uuid="41751659-c016-417e-99ab-53f626e2a732"/>
+				<text><![CDATA[Tên ứng viên]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="67" width="100" height="30" uuid="fe47055c-314e-4ee1-a77e-92f9a6c2a76a"/>
+				<text><![CDATA[Địa chỉ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="67" width="100" height="30" uuid="b940d039-8371-43a1-b088-05f6c62fa076"/>
+				<text><![CDATA[Số điện thoại]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="67" width="100" height="30" uuid="22d44a5e-8d98-4cbf-9fa7-a0e6a1eca83e"/>
+				<text><![CDATA[Khoa đăng kí]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="67" width="100" height="30" uuid="ed84ad6c-4087-4b9c-a267-e7cf9671f25f"/>
+				<text><![CDATA[Ngày sinh]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="67" width="100" height="30" uuid="660786b3-c9c1-492f-b4d5-a1105b583ac0"/>
+				<text><![CDATA[Số điểm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="67" width="100" height="30" uuid="d584155c-4498-43d4-9cc2-1fade70e35c1"/>
+				<text><![CDATA[Khối thi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="80" height="30" uuid="4a173c29-15cb-405f-90e4-168be7750b93"/>
+				<textFieldExpression><![CDATA[$F{dateCreated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="90" height="30" uuid="c86284d1-d03c-453b-b436-a0f553b3652e"/>
+				<textFieldExpression><![CDATA[$F{fullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="0" width="100" height="30" uuid="8e7307cd-2e8e-41d6-8fc7-3d12cb1d85f6"/>
+				<textFieldExpression><![CDATA[$F{phoneNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="100" height="30" uuid="87c8d47e-01d4-459b-9c9d-b90cec67f686"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="100" height="30" uuid="c472e0b9-a5eb-432f-b8a6-de138bdaee23"/>
+				<textFieldExpression><![CDATA[$F{faculty.name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="100" height="30" uuid="d2966670-587b-4cff-90b3-e8afd65b1272"/>
+				<textFieldExpression><![CDATA[$F{dateOfBirth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="97" height="30" uuid="a6272a50-e200-412a-bfe3-caaff6bc6f1a"/>
+				<textFieldExpression><![CDATA[$F{totalScore}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="0" width="100" height="30" uuid="8d170c17-5b8f-4f6e-9517-8e491af5a6df"/>
+				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
